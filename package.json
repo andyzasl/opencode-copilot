@@ -1,6 +1,6 @@
 {
   "name": "@andyzasl/opencode-copilot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An OpenCode v2 TUI plugin that displays your remaining GitHub Copilot quota and session usage",
   "type": "module",
   "main": "./src/tui.tsx",
