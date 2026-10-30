@@ -43,20 +43,20 @@ The line below (`Chat: ...`) displays the change in quota observed since the cur
 
 ### Option 1 — OpenCode CLI (Recommended)
 
-Install the plugin directly into your global OpenCode configuration:
+Install the plugin directly from GitHub into your global OpenCode configuration:
 
 ```bash
-opencode plugin add @andyzasl/opencode-copilot
+opencode plugin add andyzasl/opencode-copilot
 ```
 
 ### Option 2 — Global Config (`opencode.json`)
 
-Add the package to your `~/.config/opencode/opencode.json`:
+Add the repository specifier to your `~/.config/opencode/opencode.json`:
 
 ```json
 {
   "plugin": [
-    "@andyzasl/opencode-copilot"
+    "andyzasl/opencode-copilot"
   ]
 }
 ```
@@ -104,7 +104,7 @@ If you are not authenticated with Copilot in OpenCode, nothing is rendered.
 > [!NOTE]
 > `copilot_internal/user` is an internal GitHub API endpoint. If GitHub modifies or restricts this endpoint, the plugin safely hides rather than throwing unhandled exceptions.
 
-## Development
+## Development & Verification
 
 Check types:
 
@@ -113,11 +113,7 @@ npm install
 npm run typecheck
 ```
 
-Dry-run npm packaging:
-
-```bash
-npm pack --dry-run
-```
+Continuous integration runs TypeScript typechecking, dependency audits (`npm audit`), secret detection (Gitleaks), CodeQL SAST analysis, and Trivy filesystem vulnerability scanning on every pull request and push to `main`.
 
 ## License
 
