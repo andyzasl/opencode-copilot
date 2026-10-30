@@ -1,4 +1,8 @@
-# @andyzasl/opencode-copilot
+# opencode-copilot
+
+[![Security & Quality](https://github.com/andyzasl/opencode-copilot/actions/workflows/security.yml/badge.svg)](https://github.com/andyzasl/opencode-copilot/actions/workflows/security.yml)
+[![OpenCode v2](https://img.shields.io/badge/OpenCode-v2%20Compatible-brightgreen.svg)](https://opencode.ai)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An [OpenCode](https://opencode.ai) v2 TUI plugin that shows your remaining GitHub Copilot quota and real-time chat usage directly in the sidebar **Context** block.
 
@@ -89,6 +93,18 @@ Authentication is completely automatic. The plugin checks the `github-copilot` O
 4. Linux / Fallback: `~/.local/share/opencode/auth.json`
 
 If you are not authenticated with Copilot in OpenCode, nothing is rendered.
+
+## Security & Credential Transparency
+
+Because OpenCode plugins run directly in the host user environment without sandboxing, this plugin is built according to community security best practices:
+
+- 🔒 **Narrow Credential Scope**: The plugin *only* reads the `github-copilot` OAuth access token from OpenCode's internal `auth.json`. It **never** reads environment variables (`GITHUB_TOKEN` / `GH_TOKEN`), preventing broad personal access tokens or CI credentials from being sent.
+- 🚫 **No Credential Persistence**: The token is read on-demand directly from disk and discarded immediately after the HTTP call. It is never cached in memory, written to files, or logged.
+- 🌐 **Single Trusted Host**: The only outbound destination is `https://api.github.com/copilot_internal/user`. Zero third-party telemetry, trackers, or foreign network calls.
+- 🛡️ **Zero Runtime Dependencies**: The package contains zero external dependencies. The entire codebase is a single file ([`src/tui.tsx`](src/tui.tsx), < 200 lines) easily auditable in under 2 minutes.
+- ⚡ **Passive & Safe**: No agent tools registered (`tool.execute`), no shell command execution, and no prompt interception. If any network or API error occurs, the plugin degrades silently without disrupting your session.
+
+See [SECURITY.md](SECURITY.md) for the complete threat model and security guarantees.
 
 ## Polling & Network Behavior
 
