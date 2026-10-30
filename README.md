@@ -2,6 +2,10 @@
 
 An [OpenCode](https://opencode.ai) v2 TUI plugin that shows your remaining GitHub Copilot quota and real-time chat usage directly in the sidebar **Context** block.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andyzasl/opencode-copilot/main/assets/screenshot.png" alt="Copilot Quota and Usage Preview" width="480" />
+</p>
+
 ```
 Context
 9,234 tokens
