@@ -1,7 +1,11 @@
 # opencode-copilot
 
+[![GitHub Release](https://img.shields.io/github/v/release/andyzasl/opencode-copilot?color=blue&logo=github)](https://github.com/andyzasl/opencode-copilot/releases)
+[![OpenCode v2](https://img.shields.io/badge/OpenCode-v2-10b981?logo=terminal&logoColor=white)](https://opencode.ai)
 [![Security & Quality](https://github.com/andyzasl/opencode-copilot/actions/workflows/security.yml/badge.svg)](https://github.com/andyzasl/opencode-copilot/actions/workflows/security.yml)
-[![OpenCode v2](https://img.shields.io/badge/OpenCode-v2%20Compatible-brightgreen.svg)](https://opencode.ai)
+[![Dependencies](https://img.shields.io/badge/dependencies-0%20runtime-success)](package.json)
+[![Security Policy](https://img.shields.io/badge/security-audited-success?logo=github)](SECURITY.md)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](tsconfig.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An [OpenCode](https://opencode.ai) v2 TUI plugin that shows your remaining GitHub Copilot quota and real-time chat usage directly in the sidebar **Context** block.
