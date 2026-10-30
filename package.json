@@ -1,0 +1,55 @@
+{
+  "name": "@andyzasl/opencode-copilot",
+  "version": "0.1.0",
+  "description": "An OpenCode v2 TUI plugin that displays your remaining GitHub Copilot quota and session usage",
+  "type": "module",
+  "main": "./src/tui.tsx",
+  "exports": {
+    ".": "./src/tui.tsx",
+    "./tui": "./src/tui.tsx"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyzasl/opencode-copilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andyzasl/opencode-copilot/issues"
+  },
+  "homepage": "https://github.com/andyzasl/opencode-copilot#readme",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-v2",
+    "github-copilot",
+    "copilot",
+    "tui",
+    "quota",
+    "token-usage"
+  ],
+  "author": "Andrei Zaslavskii <andy.evil@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@opentui/core": ">=0.8.0",
+    "@opentui/solid": ">=0.8.0"
+  },
+  "devDependencies": {
+    "@opencode/plugin": "^2.2.4",
+    "@opentui/core": "^0.8.0",
+    "@opentui/solid": "^0.8.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/node": "^22.13.1"
+  }
+}
