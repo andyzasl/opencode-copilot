@@ -45,7 +45,9 @@ jobs:
           node-version: 22
 
       - name: Audit dependencies
-        run: npm audit --audit-level=high
+        run: |
+          npm i --package-lock-only
+          npm audit --audit-level=high
 
   gitleaks:
     name: Secret Scanning (Gitleaks)
